@@ -1,19 +1,19 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "BB",
+  "name": "BATTLE BUDDIES SM LOGO",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://thumbnails-photos.amazon.com/v1/thumbnail/QGINLe5GT5qhDR635oKewA?viewBox=919%2C1804&ownerId=A2MLGXH5NY97BN",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "https://thumbnails-photos.amazon.com/v1/thumbnail/QGINLe5GT5qhDR635oKewA?viewBox=919%2C1804&ownerId=A2MLGXH5NY97BN",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "https://thumbnails-photos.amazon.com/v1/thumbnail/QGINLe5GT5qhDR635oKewA?viewBox=919%2C1804&ownerId=A2MLGXH5NY97BN",
       "type": "image/png",
       "sizes": "512x512"
     }

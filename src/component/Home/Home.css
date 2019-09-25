@@ -1,0 +1,21 @@
+.flag {
+    width: 100vw;
+    height: 40vw;
+    background-image: url("https://thumbnails-photos.amazon.com/v1/thumbnail/ecVTHs8DT9SWMyPEBkjjtg?viewBox=2306%2C1804&ownerId=A2MLGXH5NY97BN");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+h1 {
+    
+}
+
+
+
+
+@media (max-width: 745px) {
+    .flag{
+
+        margin-top: 2.25vw;
+    }
+}
