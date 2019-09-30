@@ -134,21 +134,25 @@ class LoginAndRegister extends Component {
                                 onChange={this.handleChange}
 
                             />
-                            <div>
+                            <div className="choice">
                                 <input
                                     type="radio"
                                     value="Volunteer"
                                     name="userType"
                                     onClick={() => this.setState({ isVolunteer: true })}
                                 />
-                                <h6>Volunteer</h6>
+                                
                                 <input
                                     type="radio"
                                     value="Service Member"
                                     name="userType"
                                     onClick={() => this.setState({ isVolunteer: false })}
                                 />
-                                <h6>Service Member</h6>
+                                
+                            </div>
+                            <div className="pick">
+                            <h6>Volunteer</h6>
+                            <h6>Service Member</h6>
                             </div>
                             <button className="CAB"
                                 onClick={this.handleRegisterClick}

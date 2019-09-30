@@ -1,1 +1,94 @@
 @import "./App.scss";
+
+.HIWtop {
+    @include titles;
+
+    text-align: center;
+}
+.sandv {
+    @include center-all;
+}
+.sandv h2 {
+    font-size: 2vw;
+    margin-left: 11vw;
+    margin-right: 13.5vw;
+    margin-top: 1vw;
+    font-family: $sans-font;
+}
+.service {
+    color: $my-red;
+    font-weight: bolder;
+
+}
+.VolunteerT {
+    color: $my-blue;
+    font-weight: bolder;
+}
+.allsteps{
+    
+}
+.Steps1, .Steps2, .Steps3, .Steps4, .Steps5, .Steps6, .Steps7 {
+    @include center-all;
+    
+}
+.Steps7 {
+    margin-bottom: 5vw;
+}
+.Ssteps {
+    height: 20vw;
+    width: 25vw;
+    margin-left: 6vw;
+    margin-right: 6vw;
+    margin-top: 1vw;
+    color: white;
+    font-family: $sans-font;
+    @include center-all;
+    flex-direction: column;
+    margin-bottom: 1vw;
+    background-color: $my-blue;
+
+}
+.Vsteps {
+    height: 20vw;
+    width: 25vw;
+    margin-left: 6vw;
+    margin-right: 6vw;
+    margin-top: 1vw;
+    color: white;
+    font-family: $sans-font;
+    @include center-all;
+    flex-direction: column;
+    margin-bottom: 1vw;
+    background-color: $my-red;
+}
+.CAstep {
+    font-weight: bolder;
+    font-size: 3.5vw;
+    margin-top: -6vw;
+    position: absolute;
+}
+.CAbutton {
+    @include donate-button;
+    margin-top: 6vw;
+}
+.CAbutton2 {
+    @include donate-button;
+    background-color: $my-blue;
+    margin-top: 2vw;
+}
+.CAbutton:hover, .CAbutton2:hover{
+    font-size: 2.25vw;
+}
+.theinfo {
+    margin: 1vw;
+    text-align: center;
+    margin-bottom: -4vw;
+    
+}
+.theinfo3 {
+    margin-top: 6vw;
+    text-align: center;
+    margin-right: .5vw;
+    margin-left: .5vw;
+
+}

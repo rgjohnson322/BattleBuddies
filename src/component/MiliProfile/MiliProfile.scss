@@ -1,0 +1,55 @@
+@import "./App.scss";
+
+.ppage {
+    display: flex;
+}
+
+.duhpic {
+    margin-top:3vw;
+    margin-left: 6vw;
+    width: 30vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $my-blue;
+    font-family: $sans-font;
+}
+.ppic {
+    max-height: 18vw;
+    max-width: 12vw;
+    min-height: 18vw;
+    min-width: 12vw;
+    border-radius: 25%;
+}
+.EP {
+    @include donate-button;
+    width: 12vw;
+    font-size: 1.5vw;
+    margin: 1vw;
+    height: 2.5vw;
+}
+.Addpets {
+    margin-top: 2vw;
+    width: 70vw;
+    height: 10vh;
+}
+.proinfo {
+    margin-top: .5vw;
+}
+.AP {
+    @include donate-button;
+    height: 2.5vw;
+    width: 10vw;
+    font-size: 1.5vw;
+    margin-top: 3vw;
+
+}
+.eachpet {
+    height: 30vh;
+    width: 60vw;
+    outline: 2px solid $my-blue;
+    margin-top: 1vw;
+
+
+}

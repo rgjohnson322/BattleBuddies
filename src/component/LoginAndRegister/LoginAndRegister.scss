@@ -46,7 +46,7 @@
     font-family: $sans-font;
     font-size: 1.75vw;
     background: $my-red;
-    height: 65vh;
+    height: 80vh;
     width: 65vw;
     color: white;
     border-bottom-left-radius: 50px;
@@ -62,7 +62,20 @@
     @include donate-button;
     background-color: $my-blue;
     margin-top: 1.5vw;
+    margin-bottom: 1vw;
 }
 .CAB:hover, .SIB:hover {
     font-size: 2.25vw;
+}
+h6 {
+    text-align: center;
+    margin-left: 4.5vw;
+    margin-right: 1vw;
+}
+.choice {
+    margin-top: 1vw;
+    display: flex;
+}
+.pick {
+    display: flex;
 }
