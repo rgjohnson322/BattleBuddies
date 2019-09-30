@@ -1,0 +1,218 @@
+@import "./App.scss";
+
+.flag {
+    width: 100vw;
+    height: 40vw;
+    background-image: url(../../Assets/Pics/flaggblackout.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.video {
+    height: 10vw;
+    width: 20vw;
+    display: flex;
+}
+.stat1, .stat2, .stat3 {
+    background-color: $dark-blue-fade;
+    margin-top: 4vw;
+    color: white;
+    @include center-all;
+    flex-direction: column;
+}
+.stat1:hover {
+    -moz-box-shadow: 0 0 10px 5px $my-red;
+    -webkit-box-shadow: 0 0 10px 5px $my-red;
+    box-shadow: 0 0 10px 5px $my-red;
+
+}
+.stat2:hover {
+    -moz-box-shadow: 0 0 10px 5px white;
+    -webkit-box-shadow: 0 0 10px 5px white;
+    box-shadow: 0 0 10px 5px white;
+}
+.stat3:hover {
+    -moz-box-shadow: 0 0 10px 5px $my-blue;
+    -webkit-box-shadow: 0 0 10px 5px $my-blue;
+    box-shadow: 0 0 10px 5px $my-blue;
+}
+
+.stat1, .stat3 {
+    height: 15vw;
+    width: 15vw;
+    border-radius: 50%;
+    font-size: 1.75vw;
+
+}
+.stat2 {
+    height: 20vw;
+    width: 20vw;
+    border-radius: 50%;
+    font-size: 3vw;
+
+}
+.Db {
+    @include donate-button;
+
+}
+.Db:hover {
+    font-size: 2.25vw;
+}
+
+
+
+
+
+@media (max-width: 1400px) {
+    .flag {
+        height: 50vw;
+    }
+    .stat2 {
+        height: 25vw;
+        width: 25vw;
+    }
+    .stat1, .stat3 {
+        height: 20vw;
+        width: 20vw;
+    }
+}
+@media (max-width: 1175px) {
+    .flag {
+        height: 65vw;
+    }
+    .stat2 {
+        height: 32vw;
+        width: 32vw;
+        margin-top: 10vw;
+
+    }
+    .stat1, .stat3 {
+        height: 22vw;
+        width: 22vw;
+        font-size: 2vw;
+    }
+}
+@media (max-width: 969px) {
+    .flag {
+        height: 72vw;
+    }
+}
+@media (max-width: 893px) {
+    .flag {
+        height: 85vw;
+    }
+    .stat2 {
+        height: 35vw;
+        width: 35vw;
+        margin-top: 15vw;
+
+    }
+    .stat1, .stat3 {
+        height: 26vw;
+        width: 26vw;
+        font-size: 2.6vw;
+    }
+    .Db {
+        font-size: 2.5vw;
+    }
+    .Db:hover {
+        font-size: 2.6vw;
+    }
+    .stat2 {
+        font-size: 2.8vw;
+    }
+}
+@media (max-width: 780px) {
+    .flag {
+        height: 90vw;
+    }
+    .stat2 {
+        margin-top: 12vh;
+
+    }
+    .stat1, .stat3 {
+        height: 27vw;
+        width: 27vw;
+    }
+    .stat1 {
+        font-size: 3vw;
+    }
+    .Db {
+        font-size: 2.6vw;
+    }
+    .Db:hover {
+        font-size: 2.7vw;
+    }
+}
+@media (max-width: 745px) {
+    .flag{
+
+        margin-top: 2.25vw;
+    }
+    .stat1, .stat3 {
+        display: none;
+    }
+    .stat2 {
+        height: 45vw;
+        width: 45vw;
+    }
+    .stat2:hover {
+        box-shadow: 6px 6px 5px $my-blue, -.25em 6px 5px $my-red, .05rem -6px 7px white;
+    }
+    .stat1, .stat2, .stat3 {
+        font-size: 3.2vw;
+    }
+    .Db {
+        font-size: 2.75vw;
+    }
+    .Db:hover {
+        font-size: 2.85vw;
+    }
+}
+
+@media (max-width: 698px) {
+    .flag{
+
+        height: 84.5vh;
+    }
+    .stat1, .stat2, .stat3 {
+        font-size: 4vw;
+    }
+    .Db {
+        font-size: 3vw;
+    }
+    .Db:hover {
+        font-size: 3.25vw;
+    }
+}
+@media (max-width: 580px) {
+    .stat2{
+
+        height: 55vw;
+        width: 55vw;
+    }
+    .stat1, .stat2, .stat3 {
+        font-size: 5vw;
+    }
+}
+
+@media (max-width: 435px) {
+    .stat2{
+
+        margin-top: 14vh;
+        height: 60vw;
+        width: 60vw;
+    }
+    .stat1, .stat2, .stat3 {
+        font-size: 5.5vw;
+    }
+    .Db {
+        font-size: 4.25vw;
+    }
+    .Db:hover {
+        font-size: 4.5vw;
+    }
+}

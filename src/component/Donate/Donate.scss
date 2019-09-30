@@ -1,0 +1,74 @@
+@import "./App.scss";
+
+.banner{
+    @include star-banner; //do not delete, styles all headers with className banner
+}
+.dtop {
+    @include center-all;
+    text-align: center;
+    color: $my-blue;
+    font-size: 4vw;
+    font-family: $sans-font;
+    margin-top: -3vw;
+
+}
+
+.bblink {
+    color:$my-blue;
+    cursor: pointer;
+}
+.bblink:hover {
+    color: $my-red;
+}
+.dp {
+    @include center-all;
+    flex-direction: column;
+    margin-top: 2vw;
+
+
+}
+.dpay {
+    margin: 1vw;
+    border-style: solid;
+    border-width: 2px;
+    border-color: $my-blue;
+    text-align: center;
+    height: 1.5vw;
+    width: 15vw;
+    font-size: 2vw;
+}
+.dpb {
+    margin: 1.5vw;
+    margin-bottom: 3vw;
+    @include donate-button;
+}
+@media (max-width: 1500px) {
+    .dpay {
+        height: 1.8vw;
+        font-size: 2.15vw;
+    }
+}
+
+@media (max-width: 1400px) {
+    .dpay {
+        height: 2vw;
+        font-size: 2.25vw;
+    }
+}
+@media (max-width: 1100px) {
+    .dpay {
+        height: 2.5vw;
+        font-size: 2.4vw;
+    }
+}
+
+@media (max-width: 1000px) {
+    .dpay {
+        height: 2.8vw;
+        font-size: 2.75vw;
+        width: 17vw;
+    }
+    .dpb {
+        font-size: 3vw;
+    }
+}

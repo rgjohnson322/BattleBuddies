@@ -1,10 +1,22 @@
 import React from "react";
+import "./Shop.scss";
+import Nav from "../Nav/Nav";
+
+
 // import {Link} from "react-router-dom";
 
 
 function Shop() {
     return(
-        <h1>Shop</h1>
+        <>
+        <Nav />
+            <header className= "banner">
+
+            </header>
+
+
+
+    </>
     )
 }
 

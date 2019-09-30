@@ -1,0 +1,42 @@
+
+
+$my-red-fade: rgba(116, 29, 29, 0.829);
+$my-red: rgb(116, 29, 29);
+$dark-blue-fade: rgba(43, 57, 70, 0.561);
+$my-blue: rgb(43,57,70);
+$white-fade: rgba(255, 255, 255, 0.89);
+$sans-font: 'PT Sans', sans-serif;
+
+@mixin center-all {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin donate-button {
+    background-color: $my-red-fade;
+    outline: none;
+    border: none;
+    font-size: 2vw;
+    font-weight: bolder;
+    color:white;
+    border-radius: 1vw;
+}
+@mixin star-banner {
+    width: 100vw;
+    height: 20vw;
+    z-index: -1;
+    margin-top: -3vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    margin-top: -5vw;
+    background-image: url(../battlebuddies/src/Assets/Pics/rwbban.png);
+}
+
+@mixin titles {
+    font-family: $sans-font;
+    color: $my-blue;
+    font-size: 3vw;
+    font-weight: bolder;
+}

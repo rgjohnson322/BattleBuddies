@@ -1,3 +1,4 @@
+@import "./App.scss";
 
 .Blogo {
     height: 5.2vw;
@@ -43,14 +44,14 @@ div.top-menu, .top-menu-open, .top-menu-close {
     animation-fill-mode: forwards;
     animation-timing-function: linear;
     margin-top: 13vw;
-    background:  rgba(255, 255, 255, 0.712);
+    background:  $white-fade;
 }
 
 .top-menu-close{
     display: block;
     animation-name: close;
-    animation-duration: .6s;
-    animation-fill-mode: backwards;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
     animation-timing-function: linear;
     margin-top: 13vw;
 }
@@ -64,19 +65,20 @@ a:link {
 li {
     margin-top: 1.1vw;
     margin-left: 1.75vw;
-    color:rgb(43,57,70);
+    color:$my-blue;
     font-size: 1.75vw;
-    font-family: 'PT Sans', sans-serif;
+    font-family: $sans-font;
 }
-li:hover, h3:hover {
-    color: rgb(116, 29, 29);
+li:hover, #HIW:hover,#AP:hover, #S:hover, #D:hover, #SI:hover {
+    color: $my-red;
     font-weight: bolder;
     
 }
-h3 {
-    color:rgb(43,57,70);
-    margin-top: 2.5vw;
-    font-family: 'PT Sans', sans-serif;
+
+.openlist h3 {
+    color:$my-blue;
+    margin-top: 2.85vw;
+    font-family: $sans-font;
 }
 .openlist {
     font-size: 3.5vw;
@@ -100,7 +102,7 @@ h3 {
 }
 @keyframes  close {
     from{
-        Transform: translateX(575px)
+        transform: translateX(575px)
     }
     to {
         transform: translateX(1610px)
@@ -135,4 +137,49 @@ h3 {
     .top-menu-open{
         display: none;
     }
+}
+@media( max-width: 500px) {
+    .top {
+        flex-direction: column;
+        height: 20vw;
+    }
+    .Blogo{
+        margin-top: 1.2vw;
+        margin-left: 4.5vw;
+    }
+    .MB {
+        margin-top: -1.5vw;
+    }
+    .hamburgerB {
+        width: 8vw;
+        height: 8vw;
+    }
+    .top-menu-open {
+        margin-top: 25vw;
+        width: 100vw;
+        height: 10vw;
+    }
+    .top-menu-close {
+        margin-top: 25vw;
+    }
+    .openlist {
+        flex-direction: row;
+        justify-content: center;
+        font-size: 3vw;
+    }
+    .openlist h3 {
+        margin: 1.4vw;
+        padding-top: 2vw;
+    }
+    #AP, #D{
+        color: $my-red
+    }
+    #AP:hover, #D:hover {
+        font-weight: bolder;
+        // color: $my-blue;
+    }
+    #HIW:hover, #S:hover, #SI:hover {
+        color: $my-blue;
+    }
+
 }

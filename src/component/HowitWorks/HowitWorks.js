@@ -1,10 +1,38 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import Nav from "../Nav/Nav";
+import "./HowitWorks.scss";
 
 
 function HowitWorks() {
-    return(
-        <h1>HowitWorks</h1>
+    return (
+        <>
+            <Nav />
+            <header className="banner">
+
+            </header>
+            <main className="Steps">
+                <section className="step1">
+
+                </section>
+                <section className="step1">
+
+                </section>
+                <section className="step1">
+
+                </section>
+                <section className="step1">
+
+                </section>
+                <section className="step1">
+
+                </section>
+
+
+            </main>
+
+        </>
+
     )
 }
 

@@ -1,0 +1,68 @@
+@import "./App.scss";
+
+.topS{
+    @include center-all;
+    @include titles;
+}
+.Istuff {
+    @include center-all;
+
+}
+.userLI {
+    @include center-all;
+    margin-top: 3vw;
+    font-family: $sans-font;
+    font-size: 1.75vw;
+    background: $my-blue;
+    height: 6vw;
+    width: 65vw;
+    color: white;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+
+    
+}
+.userLI label {
+    margin-left: 1.5vw;
+}
+.userLI input, .Reg input{
+    height: 2vw;
+    width: 14vw;
+    font-size: 1.5vw;
+}
+.Reg input {
+    text-align: center;
+}
+
+.SIB {
+    @include donate-button;
+    margin-left: 1vw;
+}
+.Reg {
+    @include center-all;
+    flex-direction: column;
+    margin-top: -.02;
+    margin-bottom: 2vw;
+    font-family: $sans-font;
+    font-size: 1.75vw;
+    background: $my-red;
+    height: 65vh;
+    width: 65vw;
+    color: white;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+}
+.Reg label {
+    margin-top: 2vw;
+}
+
+.CAB {
+    @include donate-button;
+    background-color: $my-blue;
+    margin-top: 1.5vw;
+}
+.CAB:hover, .SIB:hover {
+    font-size: 2.25vw;
+}

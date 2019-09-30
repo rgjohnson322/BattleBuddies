@@ -1,0 +1,62 @@
+@import "./App.scss";
+
+
+.bottom {
+    background: $my-blue; 
+    width: 100vw;
+
+}
+.t {
+
+    @include center-all;
+    padding: .5vw;
+}
+.foot {
+
+    background: $my-blue; 
+    font-family: $sans-font;
+    color: white;
+    text-decoration: underline;
+    font-size: 3vw;
+
+}
+.wordss {
+    @include center-all;
+    text-align: center;
+   
+}
+.missions {
+    font-size: 2.5vw;
+    margin-top: 1vw;
+    color: white;
+    margin-bottom: 2vw;
+    padding-right: 2vw;
+    padding-left: 2vw;
+}
+
+
+
+
+
+@media (max-width: 745px) {
+    .foot {
+        font-size: 4vw;
+    }
+    .missions {
+        font-size: 3vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .missions {
+        font-size: 3.5vw;
+    }
+}
+@media (max-width: 435px) {
+    .foot {
+        font-size: 4.5vw;
+    }
+    .missions {
+        font-size: 4vw;
+    }
+}
