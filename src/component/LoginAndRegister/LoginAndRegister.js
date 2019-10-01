@@ -6,6 +6,7 @@ import {Redirect} from "react-router-dom";
 import {connect} from "react-redux";
 import {updateUser} from "../../redux/reducers/userReducer";
 
+
 class LoginAndRegister extends Component {
     constructor() {
         super();
@@ -64,9 +65,9 @@ class LoginAndRegister extends Component {
 
     render() {
         if (this.state.shouldRedirect === true && this.state.isVolunteer === false) {
-            return <Redirect to="/mili" />
+            return <Redirect to={"/mili/" + this.props.id} />
         } else if (this.state.shouldRedirect === true && this.state.isVolunteer === true) {
-            return <Redirect to="/vol" />
+            return <Redirect to={"/vol/" + this.props.id} />
         }
         return (
             <>
@@ -171,5 +172,11 @@ class LoginAndRegister extends Component {
         )
     }
 }
+function mapStateToProps (reduxState) {
+    return {
+        id :reduxState.user.user.id,
+    }
+}
 
-export default connect(undefined,{updateUser})(LoginAndRegister);
+
+export default connect(mapStateToProps,{updateUser})(LoginAndRegister);

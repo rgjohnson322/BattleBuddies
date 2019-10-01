@@ -5,6 +5,7 @@ const massive = require('massive')
 const session = require('express-session')
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 const authController = require('./controllers/authController.js')
+const petController = require ('./controllers/petController')
 
 app.use(express.json())
 
@@ -30,6 +31,9 @@ app.get("/auth/user", (req, res) => {
     res.status(200).json(req.session.user);
 })
 
+
+//pets
+app.post("/api/pet", petController.addPet)
 
 
 

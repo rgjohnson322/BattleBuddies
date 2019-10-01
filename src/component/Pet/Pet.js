@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import chomp from "../../Assets/Pics/chomp.JPG"
+import "./Pet.scss"
 // import axios from "axios";
 // import {redirect} from "react-router-dom";
 // import {connect} from "react-redux";
@@ -30,6 +31,8 @@ export default class Pet extends Component {
                                 src={chomp}
                             />
                             <div className="petinfo">
+                                <h8>service members username (link to profile)</h8>
+                                <h8>service members email:</h8>
                                 <h8>pets name</h8>
                                 <h8>location</h8>
                                 <h8>duration</h8>

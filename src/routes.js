@@ -19,8 +19,8 @@ export default (
         <Route path="/checkout" component={Checkout} />
         <Route path="/shop" component={Shop} />
 
-        <Route path="/vol" component={VolProfile} />
-        <Route path="/mili" component={MiliProfile} />
+        <Route path="/vol/:id" component={VolProfile} />
+        <Route path="/mili/:id" component={MiliProfile} />
         <Route path="/donate" component={Donate} />
         <Route path="/steps" component={HowitWorks} />
         <Route path="/login" component={LoginAndRegister} />

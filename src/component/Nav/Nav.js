@@ -42,10 +42,10 @@ class Nav extends React.Component {
                                 <Link to="/pets">
                                     <li>AVAILABLE PETS</li>
                                 </Link>
-                                <Link to="/shop">
+                                {/* <Link to="/shop">
 
                                     <li>SHOP</li>
-                                </Link>
+                                </Link> */}
                                 <Link to="/donate">
 
                                     <li>DONATE</li>
@@ -72,10 +72,10 @@ class Nav extends React.Component {
                                 <Link to="/pets">
                                     <h3 id="AP">AVAILABLE PETS</h3>
                                 </Link>
-                                <Link to="/shop">
+                                {/* <Link to="/shop">
 
                                     <h3 id="S">SHOP</h3>
-                                </Link>
+                                </Link> */}
                                 <Link to="/donate">
 
                                     <h3 id="D">DONATE</h3>

@@ -5,18 +5,19 @@ module.exports = {
 
     regUser: async (req, res) => {
         //makes camelcase for front end and destructures to body
-        const { username, password, firstName, lastName, isVolunteer } = req.body
+        const { username, password, firstName, lastName, email, isVolunteer } = req.body
         const db = req.app.get('db');
         db.checkForTakenUsernameOrEmail(username, email).then(count => {
             if (+count[0].count === 0) {
                 bcrypt.hash(password, 12).then(hash => {
-                    db.regUser(firstName, lastName, email, isVolunteer, username, hash).then(() => {
+                    db.regUser( firstName, lastName, email, isVolunteer, username, hash).then((users) => {
                         req.session.user = {
+                            id: users[0].id,
                             username,
                             firstName,
                             lastName,
                             email,
-                            isEmployer
+                            isVolunteer
                         }
                         res.status(200).json(req.session.user);
                     })
@@ -33,16 +34,17 @@ module.exports = {
         const db = req.app.get("db");
         db.getPasswordViaUsername(username).then(user => {
             let hash = user[0].password;
-            const { firstName, lastName, email, isVolunteer } = user[0];
+            const { id, firstname, lastname, email, is_volunteer } = user[0];
             console.log(user[0]);
             bcrypt.compare(password, hash).then(areSame => {
                 if (areSame) {
                     req.session.user = {
-                        username,
-                        firstName: firstName,
-                        lastName: lastName,
+                        id: id,
+                        username: username,
+                        firstName: firstname,
+                        lastName: lastname,
                         email: email,
-                        isEmployer: isVolunteer
+                        isVolunteer: is_volunteer
                     }
                     res.status(200).json(req.session.user);
                 } else {

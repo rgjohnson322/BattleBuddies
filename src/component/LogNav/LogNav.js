@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logoBIG from "../../Assets/Pics/logoBIG.png"
 import "./LogNav.scss";
+import { connect } from "react-redux";
+import Nav from "../Nav/Nav"
 
 class LogNav extends React.Component {
 
@@ -21,7 +23,11 @@ class LogNav extends React.Component {
     }
 
     render() {
-
+            if (this.props.loggedin === undefined) {
+                return (
+                    <Nav />
+                )
+            }
         return (
             <>
                 <nav className="tiptop">
@@ -97,4 +103,9 @@ class LogNav extends React.Component {
     }
 }
 
-export default LogNav;
+function mapStateToProps (reduxState) {
+    return {
+        loggedin: reduxState.user.user.id,
+    }
+}
+export default connect(mapStateToProps)(LogNav);
