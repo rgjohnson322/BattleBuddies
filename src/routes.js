@@ -15,12 +15,12 @@ import Chat from "./component/Chat/Chat"
 export default (
     <Switch>
         <Route path="/chat" component={Chat} />
-        <Route path="/checkout" component={Checkout} />
         <Route path="/pets" component={PetListings} />
-        <Route path="/mili" component={MiliProfile} />
-        <Route path="/vol" component={VolProfile} />
+        <Route path="/checkout" component={Checkout} />
         <Route path="/shop" component={Shop} />
 
+        <Route path="/vol" component={VolProfile} />
+        <Route path="/mili" component={MiliProfile} />
         <Route path="/donate" component={Donate} />
         <Route path="/steps" component={HowitWorks} />
         <Route path="/login" component={LoginAndRegister} />

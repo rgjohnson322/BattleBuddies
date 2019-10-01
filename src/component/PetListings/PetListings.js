@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Nav from "../Nav/Nav";
 import "./PetListings.scss";
+import Pet from "../Pet/Pet"
 // import axios from "axios";
 // import {redirect} from "react-router-dom";
 // import {connect} from "react-redux";
@@ -21,9 +22,14 @@ export default class PetListings extends Component {
         return (
             <>
                 <Nav />
-                    <header className= "banner">
+                <header className="banner">
 
-                    </header>
+                </header>
+                <div className="petholder">
+
+                    <Pet />
+
+                </div>
 
 
 

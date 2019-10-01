@@ -37,6 +37,9 @@
 .proinfo {
     margin-top: .5vw;
 }
+.APBC {
+
+}
 .AP {
     @include donate-button;
     height: 2.5vw;
@@ -45,11 +48,61 @@
     margin-top: 3vw;
 
 }
+.EP:hover, .AP:hover {
+    font-size: 1.6vw;
+    width: 13vw;
+    height: 2.6vw;
+}
 .eachpet {
-    height: 30vh;
-    width: 60vw;
+    height: 20vw;
+    width: 55vw;
     outline: 2px solid $my-blue;
     margin-top: 1vw;
+    display: flex;
+}
+.petpic {
+    width: 35%;
+    height: 100%;
+}
+.petinfo {
+    display:flex;
+    flex-direction: column;
+}
+.wholepet {
+    display: flex;
+    margin-bottom: 1vw;
+}
+.petbuts {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 
+}
 
+.PB {
+    @include donate-button;
+    height: 2.5vw;
+    width: 7vw;
+    font-size: 1.5vw;
+    margin: .5vw;
+}
+.PB:hover{
+    font-size: 1.6vw;
+    height: 2.6vw;
+    width: 7.5vw;
+}
+.MO {
+    @include donate-button;
+    height: 1.5vw;
+    width: 12vw;
+    font-size: 1.2vw;
+    margin: .5vw;
+    position: absolute;
+    margin-top: 18vw;
+    margin-left: 31.5vw;
+}
+.MO:hover {
+    font-size: 1.25vw;
+    height: 1.6vw;
+    width: 12.5vw;
 }

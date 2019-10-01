@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import chomp from "../../Assets/Pics/chomp.JPG"
 // import axios from "axios";
 // import {redirect} from "react-router-dom";
 // import {connect} from "react-redux";
@@ -17,7 +18,39 @@ export default class Pet extends Component {
 
     render() {
         return (
-            <h1>Pet</h1>
+            <>
+            <div>
+                <section className="Addpets">
+
+                    <div className="wholepet">
+                        <div className="eachpet">
+                            <img
+                                className="petpic"
+                                atl="urpicpetspic"
+                                src={chomp}
+                            />
+                            <div className="petinfo">
+                                <h8>pets name</h8>
+                                <h8>location</h8>
+                                <h8>duration</h8>
+                                <h8>type</h8>
+                                <h8>breed</h8>
+                                <h8>about</h8>
+                            </div>
+                                <button className="MO">MESSAGE OWNER</button>
+                        </div>
+                        <div className="petbuts">
+                            <button className="PB">EDIT</button>
+                            <button className="PB">DELETE</button>
+                        </div>
+                    </div>
+
+
+                </section>
+            </div>
+
+
+            </>
         )
     }
 }

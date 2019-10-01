@@ -9,6 +9,7 @@ import Nav from "../Nav/Nav";
 function Shop() {
     return(
         <>
+        
         <Nav />
             <header className= "banner">
 
