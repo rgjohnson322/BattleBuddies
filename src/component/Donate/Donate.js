@@ -27,7 +27,7 @@ export default class Donate extends Component {
         return (
 
             <>
-                <Nav />
+                 />
                 <header className="banner">
 
                 </header>

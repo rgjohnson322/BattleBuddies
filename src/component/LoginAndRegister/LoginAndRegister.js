@@ -71,7 +71,7 @@ class LoginAndRegister extends Component {
         }
         return (
             <>
-                <Nav />
+                 />
                 <header className="banner">
 
                 </header>

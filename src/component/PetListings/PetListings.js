@@ -21,13 +21,13 @@ export default class PetListings extends Component {
     render() {
         return (
             <>
-                <Nav />
+                 />
                 <header className="banner">
 
                 </header>
                 <div className="petholder">
 
-                    <Pet />
+                    <Pet petInfo={{about: ""}}/>
 
                 </div>
 

@@ -21,7 +21,7 @@ export default class VolProfile extends Component {
     render() {
         return (
             <>
-                <LogNav />
+                
                 <div className="vppage">
                     <main className="volpic">
                         <img

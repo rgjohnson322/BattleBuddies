@@ -17,10 +17,9 @@ class Home extends React.Component {
     render () {
     return (
         <>
-        <Nav />
         <main className="flag">
             <div className="Pstat1">
-            <h1 className="stat1">1 IN 5 <br/> <p> &nbsp;</p>Iraq/Afghanistan vets<br/> suffer<br/>from depression</h1>
+            <h1 className="stat1">1 IN 5 <br/> <p> &nbsp;</p>Iraq/Afghanistan vets suffer from depression</h1>
 
             </div>
             <div className="Pstat2">

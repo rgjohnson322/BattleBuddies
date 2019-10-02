@@ -10,7 +10,7 @@ function Shop() {
     return(
         <>
         
-        <Nav />
+
             <header className= "banner">
 
             </header>

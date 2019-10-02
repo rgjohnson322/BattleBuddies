@@ -7,7 +7,7 @@ import "./HowitWorks.scss";
 function HowitWorks() {
     return (
         <>
-            <Nav />
+             />
             <header className="banner">
 
             </header>

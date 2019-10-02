@@ -4,6 +4,8 @@ import logoBIG from "../../Assets/Pics/logoBIG.png"
 import "./LogNav.scss";
 import { connect } from "react-redux";
 import Nav from "../Nav/Nav"
+import Axios from "axios";
+import {updateUser} from "../../redux/reducers/userReducer"
 
 class LogNav extends React.Component {
 
@@ -13,7 +15,11 @@ class LogNav extends React.Component {
             menuOpenStatus: "top-menu"
         }
     }
-
+    handleClickLo = () => {
+        Axios.delete("/auth/logout").then(response => {
+            this.props.updateUser({}) 
+        })
+    }
     toggle = () => {
         if (this.state.menuOpenStatus === "top-menu-close" || this.state.menuOpenStatus === "top-menu") {
             this.setState({ menuOpenStatus: "top-menu-open" });
@@ -23,9 +29,10 @@ class LogNav extends React.Component {
     }
 
     render() {
+        console.log(this.props.loggedin)
             if (this.props.loggedin === undefined) {
                 return (
-                    <Nav />
+                <Nav />
                 )
             }
         return (
@@ -44,8 +51,13 @@ class LogNav extends React.Component {
                         <ul>
                             <Link to="/pets">
                                 <li>AVAILABLE PETS</li> </Link>
-                            <Link to="/mili">
-                                {/* link to /vol */}
+
+                            <Link to={
+                                    this.props.isVolunteer ?
+                                    ("/vol/" + this.props.loggedin)
+                                    :
+                                    ("/mili/" + this.props.loggedin)
+                            }>
                                 <li>
                                     PROFILE
                                     </li>
@@ -56,7 +68,8 @@ class LogNav extends React.Component {
                             </Link>
                             <Link to="/">
 
-                                <li>LOG OUT</li>
+                                <li
+                                onClick={this.handleClickLo}>LOG OUT</li>
                             </Link>
                             <li className="MB">
                                 <img
@@ -82,7 +95,8 @@ class LogNav extends React.Component {
                                 </Link>
                                 <Link to="/">
 
-                                    <h3 id="D">LOG OUT</h3>
+                                    <h3 id="D"
+                                    onClick={this.handleClickLo}>LOG OUT</h3>
                                 </Link>
 
                             </div>
@@ -104,8 +118,11 @@ class LogNav extends React.Component {
 }
 
 function mapStateToProps (reduxState) {
+    console.log(reduxState)
     return {
         loggedin: reduxState.user.user.id,
+
+        isVolunteer: reduxState.user.user.isVolunteer
     }
 }
-export default connect(mapStateToProps)(LogNav);
+export default connect(mapStateToProps, {updateUser})(LogNav);

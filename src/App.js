@@ -5,6 +5,7 @@ import './App.css';
 import routes from "./routes";
 //components
 import Nav from "./component/Nav/Nav"
+import LogNav from './component/LogNav/LogNav';
 //redux
 // import {connect} from "react-redux";
 // import {updateUser} from "./redux/reducers/userReducer";
@@ -18,6 +19,7 @@ class App extends React.Component {
 render () {
   return (
     <>
+    <LogNav />
       {routes}
     </>
   )
