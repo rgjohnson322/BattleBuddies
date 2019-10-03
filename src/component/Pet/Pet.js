@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import chomp from "../../Assets/Pics/chomp.JPG"
 import "./Pet.scss"
 import Axios from "axios";
 // import {redirect} from "react-router-dom";
@@ -14,7 +13,7 @@ class Pet extends Component {
             updatedpet: false,
             img: props.petInfo.img,
             name: props.petInfo.name,
-            location: props.petInfo.location,
+            location: props.petInfo.state,
             duration: props.petInfo.duration,
             type: props.petInfo.type,
             breed: props.petInfo.breed,
@@ -24,7 +23,7 @@ class Pet extends Component {
 
         }
     }
-
+    
     handleChangePetUpdate = e => {
         console.log(e.target.value)
         this.setState({
@@ -40,7 +39,7 @@ class Pet extends Component {
     }
     submitPetUpdate = () => {
         const { img, name, location, duration, type, breed, about } = this.state
-        Axios.post("api/petupdate", {
+        Axios.put("api/petupdate", {
             img,
             name,
             location,
@@ -48,11 +47,13 @@ class Pet extends Component {
             type,
             breed,
             about,
-            
-
+            id: this.props.petInfo.id
         })
+        this.setState({updatedpet: false})
     }
-    // componentDidMount = 
+    componentDidMount () {
+        console.log(this.props.petInfo)
+    }
     render() {
         return (
             <>
@@ -64,7 +65,7 @@ class Pet extends Component {
                                 <img
                                     className="petpic"
                                     atl="urpicpetspic"
-                                    src={chomp}
+                                    src={this.state.img}
                                 />
                                 {
                                     this.state.updatedpet === true ?
@@ -106,7 +107,7 @@ class Pet extends Component {
                                                 defaultValue={this.state.about}
                                             ></textarea>
                                             <button className="SBBU"
-                                                onClick={this.submitPet}>SUBMIT</button>
+                                                onClick={this.submitPetUpdate}>SUBMIT</button>
                                         </section>
                                         : null
                                 }
@@ -114,8 +115,8 @@ class Pet extends Component {
                                     !this.state.updatedpet ?
 
                                         <div className="petinfo">
-                                            <h8>service members username: {this.state.username}</h8>
-                                            <h8>service members email: {this.state.email}</h8>
+                                            <h8>service members username: {this.props.miliusername}</h8>
+                                            <h8>service members email: {this.props.miliemail}</h8>
                                             <h8>pets name: {this.state.name}</h8>
                                             <h8>location: {this.state.location}</h8>
                                             <h8>duration: {this.state.duration}</h8>

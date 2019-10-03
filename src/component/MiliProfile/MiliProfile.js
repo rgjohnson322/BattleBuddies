@@ -7,11 +7,11 @@ import Axios from "axios";
 // import axios from "axios";
 // import {redirect} from "react-router-dom";
 import { connect } from "react-redux";
-// import {updateUser} from "../redux/reducers/userReducer";
+import {updateUser} from "../../redux/reducers/userReducer";
 
 class MiliProfile extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             editprofile: false,
@@ -23,8 +23,8 @@ class MiliProfile extends Component {
             type: "",
             breed: "",
             about: "",
-            proimg: "",
-            proabout: "",
+            proimg: this.props.myimg,
+            proabout: this.props.myabout,
             mypets: []
         }
     }
@@ -54,13 +54,25 @@ class MiliProfile extends Component {
     }
 
     submitProUpdate = () => {
-        const { proimg, proabout } = this.state
-        Axios.post("api/profileupdate", {
+        const { proimg, proabout} = this.state
+        console.log(proimg)
+        Axios.put("/api/profileupdate", {
             proimg,
             proabout
+        }).then(response => {
+            //update user info in redux
+            this.props.updateUser({
+                ...response.data[0],
+                firstName: this.props.myname,
+                lastName: this.props.mylname
+            })
 
+            console.log(response)
+            this.setState({editprofile: false})
         })
     }
+
+
     submitPet = () => {
         const { img, name, location, duration, type, breed, about } = this.state
         Axios.post("/api/pet", {
@@ -71,7 +83,6 @@ class MiliProfile extends Component {
             type,
             breed,
             about
-
         })
     }
 
@@ -80,7 +91,7 @@ class MiliProfile extends Component {
     componentDidMount() {
         console.log(1)
         Axios.get("/api/getpetbyid").then(response => {
-            console.log(7)
+            console.log(response)
             this.setState({ mypets: response.data })
         })
     }
@@ -97,8 +108,8 @@ class MiliProfile extends Component {
                         <img
                             className="ppic"
                             alt="urpic"
-                            src={milipic}
-                        // {this.something.somethin}
+                            src={this.props.myimg}
+
                         />
                         {
                             this.props.loggedin ?
@@ -115,10 +126,13 @@ class MiliProfile extends Component {
                                 <section>
                                     <input className="proimg"
                                         name="proimg"
+                                        onChange={this.handleChangeProfileInput}
+                                        defaultValue={this.props.myimg}
                                     ></input>
-                                    <textarea className="pname"
+                                    <textarea className="pabout"
                                         name="proabout"
                                         onChange={this.handleChangeProfileInput}
+                                        defaultValue={this.props.myabout}
                                     ></textarea>
                                     <button className="SBB"
                                         onClick={this.submitProUpdate}>SUBMIT</button>
@@ -134,8 +148,8 @@ class MiliProfile extends Component {
                                 : null
 
                         }
-                        <h3 className="proinfo">Name:</h3>
-                        <h3 className="proinfo">About:</h3>
+                        <h3 className="proinfo">Name:{this.props.myname} {this.props.mylname}</h3>
+                        <h3 className="proinfo">About:{this.props.myabout}</h3>
                     </main>
                     <div className="petside">
                         <div className="APBC">
@@ -206,6 +220,10 @@ class MiliProfile extends Component {
 function mapStateToProps(reduxState) {
     return {
         loggedin: reduxState.user.user.id,
+        myimg: reduxState.user.user.img,
+        myabout: reduxState.user.user.about,
+        myname: reduxState.user.user.firstName,
+        mylname: reduxState.user.user.lastName
     }
 }
-export default connect(mapStateToProps)(MiliProfile);
+export default connect(mapStateToProps,{updateUser})(MiliProfile);

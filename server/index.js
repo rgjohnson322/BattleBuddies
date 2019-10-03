@@ -35,14 +35,12 @@ app.delete("/auth/logout", authController.logoutUser)
 
 //pets
 app.post("/api/pet", petController.addPet)
-app.post("/api/petupdate", petController.petUpdate)
-app.get("/api/getpetbyid", (req, res, next) => {
-    console.log(2);
-    next();
-}, petController.getPetById)
+app.put("/api/petupdate", petController.petUpdate)
+app.get("/api/getpetbyid", petController.getPetById)
+app.get("/api/allpets", petController.getAllPets)
 
 //profile
-app.post("/api/profileupdate", profileController.updateProfile)
+app.put("/api/profileupdate", profileController.updateProfile)
 
 
 

@@ -6,5 +6,7 @@ SET img = $1,
     type=$5,
     breed=$6,
     about= $7
-WHERE id = $8
-returning *;
+WHERE id = $8;
+
+SELECT * FROM pets
+ORDER BY pets.id;
