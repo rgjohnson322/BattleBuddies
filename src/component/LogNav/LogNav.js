@@ -15,6 +15,13 @@ class LogNav extends React.Component {
             menuOpenStatus: "top-menu"
         }
     }
+
+    componentDidMount() {
+        Axios.get("/auth/user").then(response => {
+            this.props.updateUser(response.data)
+        }
+            )
+    }
     handleClickLo = () => {
         Axios.delete("/auth/logout").then(response => {
             this.props.updateUser({}) 

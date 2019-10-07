@@ -1,3 +1,4 @@
-SELECT *
+SELECT pets.*, users.username, users.email
 from pets
-ORDER BY pets.id;
+INNER JOIN users
+ON pets.user_id=users.id;

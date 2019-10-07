@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 class Pet extends Component {
     constructor(props) {
         super(props);
-
+        console.log(props)
         this.state = {
             updatedpet: false,
             img: props.petInfo.img,
@@ -20,10 +20,9 @@ class Pet extends Component {
             about: props.petInfo.about,
             username: this.props.miliusername,
             email: this.props.miliemail
-
         }
     }
-    
+
     handleChangePetUpdate = e => {
         console.log(e.target.value)
         this.setState({
@@ -37,6 +36,7 @@ class Pet extends Component {
         })
 
     }
+
     submitPetUpdate = () => {
         const { img, name, location, duration, type, breed, about } = this.state
         Axios.put("api/petupdate", {
@@ -48,12 +48,15 @@ class Pet extends Component {
             breed,
             about,
             id: this.props.petInfo.id
+        }).then(response => {
+            this.props.updatePets(response.data);
         })
-        this.setState({updatedpet: false})
+        this.setState({ updatedpet: false })
     }
-    componentDidMount () {
-        console.log(this.props.petInfo)
-    }
+
+    // componentDidUpdate(prevProps, prevState) {
+    //     if(this.props.img !== )
+    // }
     render() {
         return (
             <>
@@ -64,7 +67,7 @@ class Pet extends Component {
                             <div className="eachpet">
                                 <img
                                     className="petpic"
-                                    atl="urpicpetspic"
+                                    alt="urpicpetspic"
                                     src={this.state.img}
                                 />
                                 {
@@ -115,14 +118,16 @@ class Pet extends Component {
                                     !this.state.updatedpet ?
 
                                         <div className="petinfo">
+                                            
                                             <h8>service members username: {this.props.miliusername}</h8>
                                             <h8>service members email: {this.props.miliemail}</h8>
-                                            <h8>pets name: {this.state.name}</h8>
-                                            <h8>location: {this.state.location}</h8>
-                                            <h8>duration: {this.state.duration}</h8>
-                                            <h8>type: {this.state.type}</h8>
-                                            <h8>breed: {this.state.breed}</h8>
-                                            <h8>about: {this.state.about}</h8>
+                                            <h8>pets name: {this.props.petInfo.name}</h8>
+                                            <h8>location: {this.props.petInfo.state}</h8>
+                                            <h8>duration: {this.props.petInfo.duration}</h8>
+                                            <h8>type: {this.props.petInfo.type}</h8>
+                                            <h8>breed: {this.props.petInfo.breed}</h8>
+                                            <h8>about: {this.props.petInfo.about}</h8>
+                                            <h8>pet id: {this.props.petInfo.id}</h8>
                                             <button className="MO">MESSAGE OWNER</button>
                                         </div>
 
@@ -137,7 +142,9 @@ class Pet extends Component {
                                             onClick={this.handleChangeAddedPet}>EDIT</button>
 
 
-                                        <button className="PB">DELETE</button>
+                                        <button className="PB"
+                                            onClick={()=> this.props.deletePet(this.props.petInfo.id)}
+                                        >DELETE</button>
                                     </div>
                                     : null}
 

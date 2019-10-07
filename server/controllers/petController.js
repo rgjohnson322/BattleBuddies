@@ -27,5 +27,17 @@ module.exports = {
         const db = req.app.get('db');
         const allpets= await db.getAllPets()
         res.status(200).json(allpets)
+    },
+    deletePet: async (req,res) => {
+        const id = +req.params.id;
+        console.log(id)
+        const db = req.app.get("db");
+            await db.deletePet(id, req.session.user.id)
+                const pets = await db.getPetById(req.session.user.id);
+                    res.status(200).json(pets);
+            
+        
     }
+
+    
 }

@@ -1,43 +1,121 @@
 import React, { Component } from "react";
-import LogNav from "../LogNav/LogNav";
-import "../VolProfile/VolProfile.scss"
-import milipic from "../../Assets/Pics/milipic.jpg"
-// import axios from "axios";
-// import {redirect} from "react-router-dom";
-// import {connect} from "react-redux";
-// import {updateUser} from "../redux/reducers/userReducer";
 
-export default class VolProfile extends Component {
-    constructor() {
-        super();
+import "../VolProfile/VolProfile.scss"
+
+import { connect } from "react-redux";
+import { updateUser } from "../../redux/reducers/userReducer";
+import Axios from "axios";
+
+
+class VolProfile extends Component {
+    constructor(props) {
+        super(props);
 
         this.state = {
-
+            editprofile: false,
+            proimg: this.props.myimg,
+            proabout: this.props.myabout,
+            name: this.props.myname + " " + this.props.mylname
         }
     }
 
+    componentDidMount() {
+        Axios.get("/api/user/" + this.props.match.params.id).then(response => {
+            console.log(response);
+            if(this.props.loggedin !== response.data.id) {
+                this.setState({
+                    proimg: response.data.img, 
+                    proabout: response.data.about,
+                    name: response.data.firstname + " " + response.data.lastname
+                })
+            }
+        })
 
+    }
+
+    handleChangeProfileUpdate = () => {
+        this.setState({
+            editprofile: true
+        })
+    }
+    handleChangeProfileInput = e => {
+        console.log(e.target.value)
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    submitProUpdate = () => {
+        const { proimg, proabout } = this.state
+        console.log(proimg)
+        Axios.put("/api/profileupdate", {
+            proimg,
+            proabout
+        }).then(response => {
+            this.props.updateUser({
+                ...response.data[0],
+                firstName: this.props.myname,
+                lastName: this.props.mylname
+            })
+
+            console.log(response)
+            this.setState({ editprofile: false })
+        })
+    }
 
     render() {
         return (
             <>
-                
+
                 <div className="vppage">
                     <main className="volpic">
                         <img
                             className="volopic"
                             atl="urpic"
-                            src={milipic}
+                            src={this.state.myimg}
                         // {this.something.somethin}
                         />
-                        <button className="EP">EDIT PROFILE</button>
-                        <button className="EP">MESSAGE 
-                        {/* {this.props.firstName} */}
+                        {
+                            this.props.loggedin ?
+                                <div>
+
+                                    <button className="EP"
+                                        onClick={this.handleChangeProfileUpdate}
+                                    >EDIT PROFILE</button>
+                                </div>
+                                : null
+                        }
+                        {
+                            this.state.editprofile === true ?
+                                <section>
+                                    <input className="proimg"
+                                        name="proimg"
+                                        onChange={this.handleChangeProfileInput}
+                                        defaultValue={this.props.myimg}
+                                    ></input>
+                                    <textarea className="pabout"
+                                        name="proabout"
+                                        onChange={this.handleChangeProfileInput}
+                                        defaultValue={this.props.myabout}
+                                    ></textarea>
+                                    <button className="SBB"
+                                        onClick={this.submitProUpdate}>SUBMIT</button>
+                                </section>
+                                : null
+                        }
+                        {
+                            !this.props.loggedin ?
+                                <div>
+                                    <button className="EP">MESSAGE
                         </button>
-                        <h3 className="proinfo">Name:</h3>
-                        <h3 className="proinfo">About:</h3>
+                                </div>
+                                : null
+
+                        }
+                        <h3 className="proinfo">Name:{this.state.name}</h3>
+                        <h3 className="proinfo">About:{this.state.myabout}</h3>
                     </main>
-                    </div>
+                </div>
 
 
 
@@ -45,3 +123,14 @@ export default class VolProfile extends Component {
         )
     }
 }
+function mapStateToProps(reduxState) {
+    console.log(reduxState);
+    return {
+        loggedin: reduxState.user.user.id,
+        myimg: reduxState.user.user.img,
+        myabout: reduxState.user.user.about,
+        myname: reduxState.user.user.firstName,
+        mylname: reduxState.user.user.lastName
+    }
+}
+export default connect(mapStateToProps, { updateUser })(VolProfile);

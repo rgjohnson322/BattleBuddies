@@ -21,7 +21,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     cookie: {
-        maxAge: 1000 * 60 * 24 * 7
+        maxAge: 1000 * 60 * 60 * 24 * 7
     }
 
 }))
@@ -38,9 +38,11 @@ app.post("/api/pet", petController.addPet)
 app.put("/api/petupdate", petController.petUpdate)
 app.get("/api/getpetbyid", petController.getPetById)
 app.get("/api/allpets", petController.getAllPets)
+app.delete("/api/pet/:id", petController.deletePet)
 
 //profile
 app.put("/api/profileupdate", profileController.updateProfile)
+app.get("/api/user/:id", profileController.getUser)
 
 
 

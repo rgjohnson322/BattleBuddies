@@ -37,7 +37,8 @@ class LoginAndRegister extends Component {
             axios.post("/auth/register", {
                 username, password, email, firstName, lastName, isVolunteer
             }).then(response => {
-                this.props.updateUser({ username, email, firstName, lastName, isVolunteer });
+                console.log(response)
+                this.props.updateUser(response.data);
                 this.setState({ shouldRedirect: true });
             }).catch(error => {
                 this.setState({ serverErrorMessage: error.response.data.error });
@@ -58,7 +59,7 @@ class LoginAndRegister extends Component {
                 this.props.updateUser(response.data);
                 this.setState({ shouldRedirect: true, isVolunteer: response.data.isVolunteer })
             }).catch(err => {
-                this.setState({ serverErrorMessage: err.response.data.error });
+                // this.setState({ serverErrorMessage: err.response.data.error });
             })
         }
     }

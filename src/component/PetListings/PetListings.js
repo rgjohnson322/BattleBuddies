@@ -3,17 +3,19 @@ import Nav from "../Nav/Nav";
 import "./PetListings.scss";
 import Pet from "../Pet/Pet"
 import Axios from "axios";
+import { Link } from "react-router-dom";
 
 // import {redirect} from "react-router-dom";
-// import {connect} from "react-redux";
+import {connect} from "react-redux";
 // import {updateUser} from "../redux/reducers/userReducer";
 
-export default class PetListings extends Component {
-    constructor() {
-        super();
+class PetListings extends Component {
+    constructor(props) {
+        super(props);
 
         this.state = {
-            allpets: []
+            allpets: [],
+
         }
     }
 
@@ -24,7 +26,6 @@ export default class PetListings extends Component {
     }
 
     render() {
-        console.log(this.state.allpets)
         return (
             <>
                 <header className="banner">
@@ -32,17 +33,25 @@ export default class PetListings extends Component {
                 </header>
                 <div className="petholder">
 
-                    {this.state.allpets.map(allpets => {
+                    {this.state.allpets.map(allpetss => {
+                        console.log(allpetss)
                         return (
                             <div className="petinfo">
-                                <h8>service members username: {allpets.username}</h8>
-                                <h8>service members email: {allpets.email}</h8>
-                                <h8>pets name: {allpets.name}</h8>
-                                <h8>location: {allpets.location}</h8>
-                                <h8>duration: {allpets.duration}</h8>
-                                <h8>type: {allpets.type}</h8>
-                                <h8>breed: {allpets.breed}</h8>
-                                <h8>about: {allpets.about}</h8>
+                                    <img
+                                    className="petpic"
+                                    alt="urpicpetspic"
+                                    src={allpetss.img}
+                                />
+                                <Link to={`/mili/${allpetss.user_id}`}>
+                                <h8>service members profile: {allpetss.username}</h8>
+                                </Link>
+                                <h8>service members email: {allpetss.email}</h8>
+                                <h8>pets name: {allpetss.name}</h8>
+                                <h8>location: {allpetss.state}</h8>
+                                <h8>duration: {allpetss.duration}</h8>
+                                <h8>type: {allpetss.type}</h8>
+                                <h8>breed: {allpetss.breed}</h8>
+                                <h8>about: {allpetss.about}</h8>
                                 <button className="MO">MESSAGE OWNER</button>
             </div>
                                 )
@@ -55,4 +64,10 @@ export default class PetListings extends Component {
             </>
         )
             }
-}
+        }
+            function mapStateToProps(reduxState) {
+                return {
+                    loggedin: reduxState.user.user.id,
+                }
+            }
+            export default connect(mapStateToProps)(PetListings);

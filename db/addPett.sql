@@ -5,4 +5,5 @@ VALUES
 
 
 SELECT * FROM pets
+WHERE user_id=$8
 ORDER BY pets.id;

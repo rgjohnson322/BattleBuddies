@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import LogNav from "../LogNav/LogNav"
-import milipic from "../../Assets/Pics/milipic.jpg"
 import "../MiliProfile/MiliProfile.scss";
 import Pet from "../Pet/Pet"
 import Axios from "axios";
@@ -25,6 +23,8 @@ class MiliProfile extends Component {
             about: "",
             proimg: this.props.myimg,
             proabout: this.props.myabout,
+            myname: this.props.myname,
+            mylname: this.props.mylname,
             mypets: []
         }
     }
@@ -83,18 +83,59 @@ class MiliProfile extends Component {
             type,
             breed,
             about
+        }).then(response => {
+            this.setState({ 
+                mypets: response.data,
+                addedpet:false
+            
+            })
         })
     }
 
+    handleDelete = (id) => {
+        console.log(id)
+        Axios.delete(`/api/pet/${id}`).then(response => {
+            console.log(response)
+            // this.refreshPets();
+            this.setState({
+                mypets: response.data
+            })
+        })
+    }
+
+    updatePets = (pets) => {
+        this.setState({mypets: pets})
+    }
 
 
     componentDidMount() {
-        console.log(1)
+        Axios.get("/api/user/" + this.props.match.params.id).then(response => {
+            console.log(response);
+            if(this.props.loggedin !== response.data.id) {
+                this.setState({
+                    proimg: response.data.img, 
+                    proabout: response.data.about,
+                    myname: response.data.firstname, 
+                    mylname: response.data.lastname
+                })
+            }
+        })
+
+    }
+
+    componentDidMount() {
         Axios.get("/api/getpetbyid").then(response => {
             console.log(response)
             this.setState({ mypets: response.data })
         })
     }
+
+    // refreshPets= async() => {
+    //     await Axios.get("/api/getpetbyid").then(response => {
+    //         console.log(response)
+    //         this.setState({ mypets: response.data })
+    //     })
+    // }
 
 
     render() {
@@ -148,7 +189,7 @@ class MiliProfile extends Component {
                                 : null
 
                         }
-                        <h3 className="proinfo">Name:{this.props.myname} {this.props.mylname}</h3>
+                        <h3 className="proinfo">Name:{this.state.myname} {this.state.mylname}</h3>
                         <h3 className="proinfo">About:{this.props.myabout}</h3>
                     </main>
                     <div className="petside">
@@ -200,7 +241,10 @@ class MiliProfile extends Component {
                             <div className="allpetss">
                                 {this.state.mypets.map(pet => {
                                     return (
-                                        <Pet petInfo={pet} />
+                                        <Pet 
+                                        petInfo={pet}
+                                        updatePets={this.updatePets}
+                                            deletePet={this.handleDelete} />
                                     )
                                 })}
                             </div>

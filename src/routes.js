@@ -10,11 +10,11 @@ import Donate from "./component/Donate/Donate";
 import HowitWorks from "./component/HowitWorks/HowitWorks";
 import PetListings from "./component/PetListings/PetListings";
 import Shop from "./component/Shop/Shop";
-import Chat from "./component/Chat/Chat"
+// import Chat from "./component/Chat/Chat"
 
 export default (
     <Switch>
-        <Route path="/chat" component={Chat} />
+        {/* <Route path="/chat" component={Chat} /> */}
         <Route path="/pets" component={PetListings} />
         <Route path="/checkout" component={Checkout} />
         <Route path="/shop" component={Shop} />
