@@ -1,0 +1,55 @@
+.petholder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100vw;
+  margin-top: 1vw;
+  margin-bottom: 2vw;
+}
+
+.thepets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.petcontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 20vw;
+  width: 55vw;
+  outline: 2px solid #2b3946;
+  margin-top: 1vw;
+}
+
+.petpic {
+  width: 38%;
+  height: 100%;
+}
+
+h4 {
+  font-size: 1.5vw;
+  margin-left: .5vw;
+  margin-top: .2vw;
+  font-family: "PT Sans", sans-serif;
+  color: #2b3946;
+}
+
+.userlink {
+  color: #741d1d;
+}
+/*# sourceMappingURL=PetListings.css.map */

@@ -1,0 +1,153 @@
+.HIWtop {
+  font-family: "PT Sans", sans-serif;
+  color: #2b3946;
+  font-size: 3vw;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.sandv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sandv h2 {
+  font-size: 2vw;
+  margin-left: 11vw;
+  margin-right: 13.5vw;
+  margin-top: 1vw;
+  font-family: "PT Sans", sans-serif;
+}
+
+.service {
+  color: #741d1d;
+  font-weight: bolder;
+}
+
+.VolunteerT {
+  color: #2b3946;
+  font-weight: bolder;
+}
+
+.Steps1, .Steps2, .Steps3, .Steps4, .Steps5, .Steps6, .Steps7 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Steps7 {
+  margin-bottom: 5vw;
+}
+
+.Ssteps {
+  height: 20vw;
+  width: 25vw;
+  margin-left: 6vw;
+  margin-right: 6vw;
+  margin-top: 1vw;
+  color: white;
+  font-family: "PT Sans", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 1vw;
+  background-color: #2b3946;
+}
+
+.Vsteps {
+  height: 20vw;
+  width: 25vw;
+  margin-left: 6vw;
+  margin-right: 6vw;
+  margin-top: 1vw;
+  color: white;
+  font-family: "PT Sans", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 1vw;
+  background-color: #741d1d;
+}
+
+.CAstep {
+  font-weight: bolder;
+  font-size: 3.5vw;
+  margin-top: -6vw;
+  position: absolute;
+}
+
+.CAbutton {
+  background-color: rgba(116, 29, 29, 0.829);
+  outline: none;
+  border: none;
+  font-size: 2vw;
+  font-weight: bolder;
+  color: white;
+  border-radius: 1vw;
+  margin-top: 6vw;
+}
+
+.CAbutton2 {
+  background-color: rgba(116, 29, 29, 0.829);
+  outline: none;
+  border: none;
+  font-size: 2vw;
+  font-weight: bolder;
+  color: white;
+  border-radius: 1vw;
+  background-color: #2b3946;
+  margin-top: 2vw;
+}
+
+.CAbutton:hover, .CAbutton2:hover {
+  font-size: 2.25vw;
+}
+
+.theinfo {
+  margin: 1vw;
+  text-align: center;
+  margin-bottom: -4vw;
+  font-size: 1.75vw;
+}
+
+.theinfo3 {
+  margin-top: 6vw;
+  text-align: center;
+  margin-right: .5vw;
+  margin-left: .5vw;
+  font-size: 1.75vw;
+}
+/*# sourceMappingURL=HowitWorks.css.map */

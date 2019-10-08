@@ -1,0 +1,131 @@
+.banner {
+  width: 100vw;
+  height: 20vw;
+  z-index: -1;
+  margin-top: -3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  margin-top: -5vw;
+  background-image: url(./Assets/Pics/rwbban.png);
+}
+
+.dtop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  color: #2b3946;
+  font-size: 4vw;
+  font-family: "PT Sans", sans-serif;
+  margin-top: -3vw;
+}
+
+.bblink {
+  color: #2b3946;
+  cursor: pointer;
+}
+
+.bblink:hover {
+  color: #741d1d;
+}
+
+.dp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 2vw;
+}
+
+.stripe {
+  margin-bottom: 2vw;
+}
+
+.dpay {
+  margin: 1vw;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #2b3946;
+  text-align: center;
+  height: 1.5vw;
+  width: 15vw;
+  font-size: 2vw;
+}
+
+.instruct {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  color: #741d1d;
+  font-size: 2vw;
+  font-family: "PT Sans", sans-serif;
+  margin-bottom: 2vw;
+}
+
+.dpb {
+  margin: 1.5vw;
+  margin-bottom: 3vw;
+  background-color: rgba(116, 29, 29, 0.829);
+  outline: none;
+  border: none;
+  font-size: 2vw;
+  font-weight: bolder;
+  color: white;
+  border-radius: 1vw;
+}
+
+@media (max-width: 1500px) {
+  .dpay {
+    height: 1.8vw;
+    font-size: 2.15vw;
+  }
+}
+
+@media (max-width: 1400px) {
+  .dpay {
+    height: 2vw;
+    font-size: 2.25vw;
+  }
+}
+
+@media (max-width: 1100px) {
+  .dpay {
+    height: 2.5vw;
+    font-size: 2.4vw;
+  }
+}
+
+@media (max-width: 1000px) {
+  .dpay {
+    height: 2.8vw;
+    font-size: 2.75vw;
+    width: 17vw;
+  }
+  .dpb {
+    font-size: 3vw;
+  }
+}
+/*# sourceMappingURL=Donate.css.map */

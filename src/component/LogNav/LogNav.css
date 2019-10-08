@@ -1,0 +1,241 @@
+.Blogo {
+  height: 5.2vw;
+  width: 20vw;
+}
+
+.hamburgerB {
+  height: 6vw;
+  width: 6vw;
+  margin-top: 2vw;
+  cursor: pointer;
+}
+
+.top {
+  height: 10vw;
+}
+
+.top, ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top-menu {
+  display: none;
+}
+
+div.top-menu, .top-menu-open, .top-menu-close {
+  width: 32vw;
+  height: 32vw;
+  position: fixed;
+  top: 0;
+  right: 31.5rem;
+  -webkit-transform: translateX(1610px);
+          transform: translateX(1610px);
+}
+
+.top-menu-open {
+  display: block;
+  -webkit-animation-name: open;
+          animation-name: open;
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  margin-top: 13vw;
+  background: rgba(255, 255, 255, 0.89);
+}
+
+.top-menu-close {
+  display: block;
+  -webkit-animation-name: close;
+          animation-name: close;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  margin-top: 13vw;
+}
+
+.flag {
+  z-index: -100;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+li {
+  margin-top: 1.1vw;
+  margin-left: 1.75vw;
+  color: #2b3946;
+  font-size: 1.75vw;
+  font-family: "PT Sans", sans-serif;
+}
+
+li:hover, #HIW:hover, #AP:hover, #S:hover, #D:hover, #SI:hover {
+  color: #741d1d;
+  font-weight: bolder;
+}
+
+.openlist h3 {
+  color: #2b3946;
+  margin-top: 2.85vw;
+  font-family: "PT Sans", sans-serif;
+}
+
+.openlist {
+  font-size: 3.5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.MB {
+  display: none;
+}
+
+@-webkit-keyframes open {
+  from {
+    -webkit-transform: translateX(1610px);
+            transform: translateX(1610px);
+  }
+  to {
+    -webkit-transform: translateX(505px);
+            transform: translateX(505px);
+  }
+}
+
+@keyframes open {
+  from {
+    -webkit-transform: translateX(1610px);
+            transform: translateX(1610px);
+  }
+  to {
+    -webkit-transform: translateX(505px);
+            transform: translateX(505px);
+  }
+}
+
+@-webkit-keyframes close {
+  from {
+    -webkit-transform: translateX(575px);
+            transform: translateX(575px);
+  }
+  to {
+    -webkit-transform: translateX(1610px);
+            transform: translateX(1610px);
+  }
+}
+
+@keyframes close {
+  from {
+    -webkit-transform: translateX(575px);
+            transform: translateX(575px);
+  }
+  to {
+    -webkit-transform: translateX(1610px);
+            transform: translateX(1610px);
+  }
+}
+
+@media (max-width: 745px) {
+  li {
+    display: none;
+  }
+  .MB {
+    display: block;
+  }
+  .Blogo {
+    height: 11vw;
+    width: 40vw;
+  }
+  .top {
+    margin-top: 3vw;
+  }
+  .top-menu-open {
+    z-index: 10;
+  }
+  .top-menu-close {
+    z-index: -1;
+  }
+}
+
+@media (min-width: 745.1px) {
+  .top-menu-open {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 20vw;
+  }
+  .Blogo {
+    margin-top: 1.2vw;
+    margin-left: 4.5vw;
+  }
+  .MB {
+    margin-top: -1.5vw;
+  }
+  .hamburgerB {
+    width: 8vw;
+    height: 8vw;
+  }
+  .top-menu-open {
+    margin-top: 25vw;
+    width: 100vw;
+    height: 10vw;
+  }
+  .top-menu-close {
+    margin-top: 25vw;
+  }
+  .openlist {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 3vw;
+  }
+  .openlist h3 {
+    margin: 1.4vw;
+    padding-top: 2vw;
+  }
+  #AP, #D {
+    color: #741d1d;
+  }
+  #AP:hover, #D:hover {
+    font-weight: bolder;
+  }
+  #HIW:hover, #S:hover, #SI:hover {
+    color: #2b3946;
+  }
+}
+/*# sourceMappingURL=LogNav.css.map */

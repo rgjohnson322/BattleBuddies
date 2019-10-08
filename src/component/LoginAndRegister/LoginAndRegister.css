@@ -1,0 +1,142 @@
+.topS {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "PT Sans", sans-serif;
+  color: #2b3946;
+  font-size: 3vw;
+  font-weight: bolder;
+}
+
+.Istuff {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.userLI {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 3vw;
+  font-family: "PT Sans", sans-serif;
+  font-size: 1.75vw;
+  background: #2b3946;
+  height: 6vw;
+  width: 65vw;
+  color: white;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+.userLI label {
+  margin-left: 1.5vw;
+}
+
+.userLI input, .Reg input {
+  height: 2vw;
+  width: 14vw;
+  font-size: 1.5vw;
+}
+
+.Reg input {
+  text-align: center;
+}
+
+.SIB {
+  background-color: rgba(116, 29, 29, 0.829);
+  outline: none;
+  border: none;
+  font-size: 2vw;
+  font-weight: bolder;
+  color: white;
+  border-radius: 1vw;
+  margin-left: 1vw;
+}
+
+.Reg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: -.02;
+  margin-bottom: 2vw;
+  font-family: "PT Sans", sans-serif;
+  font-size: 1.75vw;
+  background: #741d1d;
+  height: 80vh;
+  width: 65vw;
+  color: white;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  padding-top: 3vw;
+  padding-bottom: 3vw;
+}
+
+.Reg label {
+  margin-top: 2vw;
+}
+
+.CAB {
+  background-color: rgba(116, 29, 29, 0.829);
+  outline: none;
+  border: none;
+  font-size: 2vw;
+  font-weight: bolder;
+  color: white;
+  border-radius: 1vw;
+  background-color: #2b3946;
+  margin-top: 1.5vw;
+  margin-bottom: 1vw;
+}
+
+.CAB:hover, .SIB:hover {
+  font-size: 2.25vw;
+}
+
+h6 {
+  text-align: center;
+  margin-left: 4.5vw;
+  margin-right: 1vw;
+}
+
+.choice {
+  margin-top: 1vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pick {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=LoginAndRegister.css.map */

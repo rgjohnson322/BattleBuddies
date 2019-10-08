@@ -1,0 +1,72 @@
+.bottom {
+  background: #2b3946;
+  width: 100vw;
+}
+
+.t {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .5vw;
+}
+
+.foot {
+  background: #2b3946;
+  font-family: "PT Sans", sans-serif;
+  color: white;
+  text-decoration: underline;
+  font-size: 3vw;
+}
+
+.wordss {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.missions {
+  font-size: 2.5vw;
+  margin-top: 1vw;
+  color: white;
+  margin-bottom: 2vw;
+  padding-right: 2vw;
+  padding-left: 2vw;
+}
+
+@media (max-width: 745px) {
+  .foot {
+    font-size: 4vw;
+  }
+  .missions {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .missions {
+    font-size: 3.5vw;
+  }
+}
+
+@media (max-width: 435px) {
+  .foot {
+    font-size: 4.5vw;
+  }
+  .missions {
+    font-size: 4vw;
+  }
+}
+/*# sourceMappingURL=Footer.css.map */
