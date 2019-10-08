@@ -2,8 +2,31 @@
 
 .petholder {
     @include center-all;
+    flex-direction: column;
     width: 100vw;
-    position: absolute;
-    padding-left: 8vw;
-    
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+}
+.thepets {
+    display:flex;
+    justify-content: center;
+
+}
+.petcontainer {
+    display:flex;
+    height: 20vw;
+    width: 55vw;
+    outline: 2px solid $my-blue;
+    margin-top: 1vw;
+}
+.petpic {
+    width: 38%;
+    height: 100%;
+
+}
+h4 {
+    font-size: 1.5vw;
+    margin-left: .5vw;
+    margin-top: .2vw;
+    font-family: $sans-font;
 }

@@ -9,9 +9,10 @@ module.exports = {
         res.status(200).json(users)
     },
     getUser: async (req, res) => {
+        console.log(req.params)
         const {id} = req.params;
         const db = req.app.get("db");
-        const user = await db.getUserById(id);
+        const user = await db.getUserById(+id);
         res.status(200).json(user[0]);
     }
 }

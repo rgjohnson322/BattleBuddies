@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Nav from "../Nav/Nav";
+
 import "./LoginAndRegister.scss";
 import axios from "axios";
 import {Redirect} from "react-router-dom";

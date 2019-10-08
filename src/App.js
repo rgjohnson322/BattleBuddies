@@ -4,7 +4,7 @@ import './App.css';
 //routing
 import routes from "./routes";
 //components
-import Nav from "./component/Nav/Nav"
+
 import LogNav from './component/LogNav/LogNav';
 //redux
 // import {connect} from "react-redux";

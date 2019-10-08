@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import "../Home/Home.scss";
 // import Youtube from 'react-youtube'
 import Footer from "../Footer/Footer"
-import Nav from "../Nav/Nav"
+import Axios from "axios";
+
 
 
 class Home extends React.Component {
@@ -11,8 +12,18 @@ class Home extends React.Component {
     constructor() {
         super();
         this.state = {
-            Donate: ""
+            donate: ""
         }
+    }
+
+
+    componentDidMount = () => {
+        Axios.get("/api/donations").then(response => {
+            console.log(response)
+            this.setState({
+                donate: response.data[0].sum
+            })
+        })
     }
     render () {
     return (

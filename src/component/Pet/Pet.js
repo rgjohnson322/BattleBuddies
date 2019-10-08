@@ -68,7 +68,7 @@ class Pet extends Component {
                                 <img
                                     className="petpic"
                                     alt="urpicpetspic"
-                                    src={this.state.img}
+                                    src={this.props.petInfo.img}
                                 />
                                 {
                                     this.state.updatedpet === true ?
@@ -76,36 +76,43 @@ class Pet extends Component {
                                         <section>
                                             <input className="puimg"
                                                 name="img"
+                                                placeholder="IMG URL"
                                                 onChange={this.handleChangePetUpdate}
                                                 defaultValue={this.state.img}
                                             ></input>
                                             <input className="puname"
                                                 name="name"
+                                                placeholder="PETS NAME"
                                                 onChange={this.handleChangePetUpdate}
                                                 defaultValue={this.state.name}
                                             ></input>
                                             <input className="pulocation"
                                                 name="location"
+                                                placeholder="LOCATION"
                                                 onChange={this.handleChangePetUpdate}
                                                 defaultValue={this.state.location}
                                             ></input>
                                             <input className="puduration"
                                                 name="duration"
+                                                placeholder="DURATION"
                                                 onChange={this.handleChangePetUpdate}
                                                 defaultValue={this.state.duration}
                                             ></input>
                                             <input className="putype"
                                                 name="type"
+                                                placeholder="TYPE OF PET"
                                                 onChange={this.handleChangePetUpdate}
                                                 defaultValue={this.state.type}
                                             ></input>
                                             <input className="pubreed"
                                                 name="breed"
+                                                placeholder="BREED"
                                                 onChange={this.handleChangePetUpdate}
                                                 defaultValue={this.state.breed}
                                             ></input>
                                             <textarea className="puabout"
                                                 name="about"
+                                                placeholder="ABOUT THE PET"
                                                 onChange={this.handleChangePetUpdate}
                                                 defaultValue={this.state.about}
                                             ></textarea>
@@ -119,15 +126,15 @@ class Pet extends Component {
 
                                         <div className="petinfo">
                                             
-                                            <h8>service members username: {this.props.miliusername}</h8>
-                                            <h8>service members email: {this.props.miliemail}</h8>
-                                            <h8>pets name: {this.props.petInfo.name}</h8>
-                                            <h8>location: {this.props.petInfo.state}</h8>
-                                            <h8>duration: {this.props.petInfo.duration}</h8>
-                                            <h8>type: {this.props.petInfo.type}</h8>
-                                            <h8>breed: {this.props.petInfo.breed}</h8>
-                                            <h8>about: {this.props.petInfo.about}</h8>
-                                            <h8>pet id: {this.props.petInfo.id}</h8>
+                                            <h4>service members username: {this.props.miliusername}</h4>
+                                            <h4>service members email: {this.props.miliemail}</h4>
+                                            <h4>pets name: {this.props.petInfo.name}</h4>
+                                            <h4>location: {this.props.petInfo.state}</h4>
+                                            <h4>duration: {this.props.petInfo.duration}</h4>
+                                            <h4>type: {this.props.petInfo.type}</h4>
+                                            <h4>breed: {this.props.petInfo.breed}</h4>
+                                            <h4>about: {this.props.petInfo.about}</h4>
+                                            <h4>pet id: {this.props.petInfo.id}</h4>
                                             <button className="MO">MESSAGE OWNER</button>
                                         </div>
 

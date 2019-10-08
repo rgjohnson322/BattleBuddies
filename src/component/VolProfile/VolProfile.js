@@ -71,8 +71,8 @@ class VolProfile extends Component {
                     <main className="volpic">
                         <img
                             className="volopic"
-                            atl="urpic"
-                            src={this.state.myimg}
+                            alt="urpic"
+                            src={this.state.proimg}
                         // {this.something.somethin}
                         />
                         {
@@ -90,13 +90,15 @@ class VolProfile extends Component {
                                 <section>
                                     <input className="proimg"
                                         name="proimg"
+                                        placeholder="IMG URL"
                                         onChange={this.handleChangeProfileInput}
-                                        defaultValue={this.props.myimg}
+                                        defaultValue={this.state.proimg}
                                     ></input>
                                     <textarea className="pabout"
                                         name="proabout"
+                                        placeholder="ABOUT"
                                         onChange={this.handleChangeProfileInput}
-                                        defaultValue={this.props.myabout}
+                                        defaultValue={this.state.proabout}
                                     ></textarea>
                                     <button className="SBB"
                                         onClick={this.submitProUpdate}>SUBMIT</button>
@@ -113,7 +115,7 @@ class VolProfile extends Component {
 
                         }
                         <h3 className="proinfo">Name:{this.state.name}</h3>
-                        <h3 className="proinfo">About:{this.state.myabout}</h3>
+                        <h3 className="proinfo">About:{this.state.proabout}</h3>
                     </main>
                 </div>
 

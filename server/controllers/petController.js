@@ -37,6 +37,12 @@ module.exports = {
                     res.status(200).json(pets);
             
         
+    },
+    getTheirPets: async (req,res) => {
+        const id= +req.params.id;
+        const db = req.app.get("db");
+            const tpets = await db.getPetById(id)
+                res.status(200).json(tpets)
     }
 
     

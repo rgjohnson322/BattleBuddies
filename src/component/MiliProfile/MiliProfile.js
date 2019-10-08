@@ -120,14 +120,11 @@ class MiliProfile extends Component {
                 })
             }
         })
-
-    }
-
-    componentDidMount() {
-        Axios.get("/api/getpetbyid").then(response => {
+        Axios.get("/api/pet/" + this.props.match.params.id).then(response => {
             console.log(response)
             this.setState({ mypets: response.data })
         })
+
     }
 
     // refreshPets= async() => {
@@ -137,11 +134,23 @@ class MiliProfile extends Component {
     //     })
     // }
 
-
+    // checkUploadResult = (error,resultEvent) => {
+    //     if (resultEvent.event === "success") {
+    //         console.log("Picture uploaded successfully")
+    //         console.log(resultEvent.info.url);
+    //         this.setState({url: resultEvent.info.url});
+    //     }
+    // };
     render() {
-
-
-
+        // const widget = window.cloudinary.createUploadWidget(
+        //     {
+        //     cloudName: "dhiewclxm",
+        //     uploadPreset: "jxphfpdy",
+        //     sources: ["local", "url", "dropbox", "facebook", "instagram"]
+        //     },
+        //     (error, result) => {
+        //     this.checkUploadResult(error, result);
+        //     })
         return (
             <>
                 <div className="ppage">
@@ -149,7 +158,7 @@ class MiliProfile extends Component {
                         <img
                             className="ppic"
                             alt="urpic"
-                            src={this.props.myimg}
+                            src={this.state.proimg}
 
                         />
                         {
@@ -170,6 +179,8 @@ class MiliProfile extends Component {
                                         onChange={this.handleChangeProfileInput}
                                         defaultValue={this.props.myimg}
                                     ></input>
+                                        {/* <button 
+                                    className='cloud' onClick ={()=>widget.open()}>add pic</button> */}
                                     <textarea className="pabout"
                                         name="proabout"
                                         onChange={this.handleChangeProfileInput}
@@ -190,7 +201,7 @@ class MiliProfile extends Component {
 
                         }
                         <h3 className="proinfo">Name:{this.state.myname} {this.state.mylname}</h3>
-                        <h3 className="proinfo">About:{this.props.myabout}</h3>
+                        <h3 className="proinfo">About:{this.state.proabout}</h3>
                     </main>
                     <div className="petside">
                         <div className="APBC">
@@ -204,30 +215,37 @@ class MiliProfile extends Component {
                                     <section>
                                         <input className="pimg"
                                             name="img"
+                                            placeholder="IMG URL"
                                             onChange={this.handleChangePetInput}
                                         ></input>
                                         <input className="pname"
                                             name="name"
+                                            placeholder="PETS NAME"
                                             onChange={this.handleChangePetInput}
                                         ></input>
                                         <input className="plocation"
+                                        placeholder="LOCATION"
                                             name="location"
                                             onChange={this.handleChangePetInput}
                                         ></input>
                                         <input className="pduration"
+                                        placeholder="DURATION"
                                             name="duration"
                                             onChange={this.handleChangePetInput}
                                         ></input>
                                         <input className="ptype"
+                                        placeholder="TYPE OF PET"
                                             name="type"
                                             onChange={this.handleChangePetInput}
                                         ></input>
                                         <input className="pbreed"
+                                        placeholder="BREED"
                                             name="breed"
                                             onChange={this.handleChangePetInput}
                                         ></input>
                                         <textarea className="pabout"
                                             name="about"
+                                            placeholder="ABOUT THE PET"
                                             onChange={this.handleChangePetInput}
                                         ></textarea>
                                         <button className="SBB"
