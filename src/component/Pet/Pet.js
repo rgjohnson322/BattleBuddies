@@ -126,8 +126,8 @@ class Pet extends Component {
 
                                         <div className="petinfo">
                                             
-                                            <h4>service members username: {this.props.miliusername}</h4>
-                                            <h4>service members email: {this.props.miliemail}</h4>
+                                            {/* <h4>service members username: {this.state.miliusername}</h4>
+                                            <h4>service members email: {this.state.miliemail}</h4> */}
                                             <h4>pets name: {this.props.petInfo.name}</h4>
                                             <h4>location: {this.props.petInfo.state}</h4>
                                             <h4>duration: {this.props.petInfo.duration}</h4>

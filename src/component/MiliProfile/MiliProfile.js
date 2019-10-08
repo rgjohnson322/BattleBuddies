@@ -127,30 +127,9 @@ class MiliProfile extends Component {
 
     }
 
-    // refreshPets= async() => {
-    //     await Axios.get("/api/getpetbyid").then(response => {
-    //         console.log(response)
-    //         this.setState({ mypets: response.data })
-    //     })
-    // }
 
-    // checkUploadResult = (error,resultEvent) => {
-    //     if (resultEvent.event === "success") {
-    //         console.log("Picture uploaded successfully")
-    //         console.log(resultEvent.info.url);
-    //         this.setState({url: resultEvent.info.url});
-    //     }
-    // };
     render() {
-        // const widget = window.cloudinary.createUploadWidget(
-        //     {
-        //     cloudName: "dhiewclxm",
-        //     uploadPreset: "jxphfpdy",
-        //     sources: ["local", "url", "dropbox", "facebook", "instagram"]
-        //     },
-        //     (error, result) => {
-        //     this.checkUploadResult(error, result);
-        //     })
+
         return (
             <>
                 <div className="ppage">
@@ -179,8 +158,6 @@ class MiliProfile extends Component {
                                         onChange={this.handleChangeProfileInput}
                                         defaultValue={this.props.myimg}
                                     ></input>
-                                        {/* <button 
-                                    className='cloud' onClick ={()=>widget.open()}>add pic</button> */}
                                     <textarea className="pabout"
                                         name="proabout"
                                         onChange={this.handleChangeProfileInput}

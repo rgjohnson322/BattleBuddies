@@ -46,7 +46,7 @@ class PetListings extends Component {
                                     />
                                     <div className="petinfo">
                                     <Link to={`/mili/${allpetss.user_id}`}>
-                                        <h4>service members profile: {allpetss.username}</h4>
+                                        <h4 className="userlink">CLICK HERE to view service members profile</h4>
                                     </Link>
                                     <h4>service members email: {allpetss.email}</h4>
                                     <h4>pets name: {allpetss.name}</h4>
