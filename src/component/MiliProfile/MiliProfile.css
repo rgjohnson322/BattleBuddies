@@ -54,6 +54,26 @@
   margin-top: .5vw;
 }
 
+.PB {
+  background-color: rgba(116, 29, 29, 0.829);
+  outline: none;
+  border: none;
+  font-size: 2vw;
+  font-weight: bolder;
+  color: white;
+  border-radius: 1vw;
+  height: 2.5vw;
+  width: 7vw;
+  font-size: 1.5vw;
+  margin: .5vw;
+}
+
+.PB:hover {
+  font-size: 1.6vw;
+  height: 2.6vw;
+  width: 7.5vw;
+}
+
 .AP {
   background-color: rgba(116, 29, 29, 0.829);
   outline: none;

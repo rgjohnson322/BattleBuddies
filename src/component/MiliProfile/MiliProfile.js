@@ -5,7 +5,7 @@ import Axios from "axios";
 // import axios from "axios";
 // import {redirect} from "react-router-dom";
 import { connect } from "react-redux";
-import {updateUser} from "../../redux/reducers/userReducer";
+import { updateUser } from "../../redux/reducers/userReducer";
 
 class MiliProfile extends Component {
     constructor(props) {
@@ -54,21 +54,21 @@ class MiliProfile extends Component {
     }
 
     submitProUpdate = () => {
-        const { proimg, proabout} = this.state
-        console.log(proimg)
+        const { proimg, proabout } = this.state
+
         Axios.put("/api/profileupdate", {
             proimg,
             proabout
         }).then(response => {
             //update user info in redux
+            console.log(response)
             this.props.updateUser({
                 ...response.data[0],
                 firstName: this.props.myname,
                 lastName: this.props.mylname
             })
 
-            console.log(response)
-            this.setState({editprofile: false})
+            this.setState({ editprofile: false })
         })
     }
 
@@ -84,10 +84,10 @@ class MiliProfile extends Component {
             breed,
             about
         }).then(response => {
-            this.setState({ 
+            this.setState({
                 mypets: response.data,
-                addedpet:false
-            
+                addedpet: false
+
             })
         })
     }
@@ -95,8 +95,8 @@ class MiliProfile extends Component {
     handleDelete = (id) => {
         console.log(id)
         Axios.delete(`/api/pet/${id}`).then(response => {
-            console.log(response)
-            // this.refreshPets();
+
+
             this.setState({
                 mypets: response.data
             })
@@ -104,24 +104,24 @@ class MiliProfile extends Component {
     }
 
     updatePets = (pets) => {
-        this.setState({mypets: pets})
+        this.setState({ mypets: pets })
     }
 
 
     componentDidMount() {
         Axios.get("/api/user/" + this.props.match.params.id).then(response => {
-            console.log(response);
-            if(this.props.loggedin !== response.data.id) {
+
+            if (this.props.loggedin !== response.data.id) {
                 this.setState({
-                    proimg: response.data.img, 
+                    proimg: response.data.img,
                     proabout: response.data.about,
-                    myname: response.data.firstname, 
+                    myname: response.data.firstname,
                     mylname: response.data.lastname
                 })
             }
         })
         Axios.get("/api/pet/" + this.props.match.params.id).then(response => {
-            console.log(response)
+
             this.setState({ mypets: response.data })
         })
 
@@ -141,7 +141,7 @@ class MiliProfile extends Component {
 
                         />
                         {
-                            this.props.loggedin ?
+                            this.props.loggedin == this.props.match.params.id ?
                                 <div>
 
                                     <button className="EP"
@@ -152,16 +152,18 @@ class MiliProfile extends Component {
                         }
                         {
                             this.state.editprofile === true ?
-                                <section>
-                                    <input className="proimg"
+                                <section className="PI">
+                                    <input className="pin"
                                         name="proimg"
                                         onChange={this.handleChangeProfileInput}
                                         defaultValue={this.props.myimg}
+                                        placeholder="IMG URL"
                                     ></input>
-                                    <textarea className="pabout"
+                                    <textarea className="pinabout"
                                         name="proabout"
                                         onChange={this.handleChangeProfileInput}
                                         defaultValue={this.props.myabout}
+                                        placeholder="TYPE SOMETHING ABOUT YOURSELF HERE"
                                     ></textarea>
                                     <button className="SBB"
                                         onClick={this.submitProUpdate}>SUBMIT</button>
@@ -169,7 +171,7 @@ class MiliProfile extends Component {
                                 : null
                         }
                         {
-                            !this.props.loggedin ?
+                            this.props.loggedin != this.props.match.params.id ?
                                 <div>
                                     <button className="EP">MESSAGE
                         </button>
@@ -182,13 +184,19 @@ class MiliProfile extends Component {
                     </main>
                     <div className="petside">
                         <div className="APBC">
-
+                        {
+                            this.props.loggedin == this.props.match.params.id ?
+                        
                             <button
                                 className="AP"
                                 onClick={this.handleChangeAddedPet}
                             >ADD PETS</button>
+
+                            :
+                            null
+                        }
                             {
-                                this.state.addedpet === true ?
+                                this.state.addedpet == true ?
                                     <section>
                                         <input className="pimg"
                                             name="img"
@@ -201,22 +209,22 @@ class MiliProfile extends Component {
                                             onChange={this.handleChangePetInput}
                                         ></input>
                                         <input className="plocation"
-                                        placeholder="LOCATION"
+                                            placeholder="LOCATION"
                                             name="location"
                                             onChange={this.handleChangePetInput}
                                         ></input>
                                         <input className="pduration"
-                                        placeholder="DURATION"
+                                            placeholder="DURATION"
                                             name="duration"
                                             onChange={this.handleChangePetInput}
                                         ></input>
                                         <input className="ptype"
-                                        placeholder="TYPE OF PET"
+                                            placeholder="TYPE OF PET"
                                             name="type"
                                             onChange={this.handleChangePetInput}
                                         ></input>
                                         <input className="pbreed"
-                                        placeholder="BREED"
+                                            placeholder="BREED"
                                             name="breed"
                                             onChange={this.handleChangePetInput}
                                         ></input>
@@ -236,10 +244,12 @@ class MiliProfile extends Component {
                             <div className="allpetss">
                                 {this.state.mypets.map(pet => {
                                     return (
-                                        <Pet 
-                                        petInfo={pet}
-                                        updatePets={this.updatePets}
-                                            deletePet={this.handleDelete} />
+                                        <Pet
+                                            petInfo={pet}
+                                            updatePets={this.updatePets}
+                                            deletePet={this.handleDelete} 
+                                            userId={this.props.match.params.id}
+                                            />
                                     )
                                 })}
                             </div>
@@ -265,4 +275,4 @@ function mapStateToProps(reduxState) {
         mylname: reduxState.user.user.lastName
     }
 }
-export default connect(mapStateToProps,{updateUser})(MiliProfile);
+export default connect(mapStateToProps, { updateUser })(MiliProfile);

@@ -69,10 +69,10 @@ class LogNav extends React.Component {
                                     PROFILE
                                     </li>
                             </Link>
-                            <Link to="/chat">
+                            {/* <Link to="/chat">
 
                                 <li>MESSAGES</li>
-                            </Link>
+                            </Link> */}
                             <Link to="/">
 
                                 <li

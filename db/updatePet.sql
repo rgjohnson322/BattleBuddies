@@ -8,5 +8,12 @@ SET img = $1,
     about= $7
 WHERE id = $8;
 
-SELECT * FROM pets
+-- SELECT * FROM pets
+-- ORDER BY pets.id;
+
+SELECT pets.*, users.username, users.email
+FROM pets 
+INNER JOIN users
+ON pets.user_id=users.id
+WHERE user_id = $9
 ORDER BY pets.id;

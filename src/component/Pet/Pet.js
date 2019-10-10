@@ -10,16 +10,23 @@ class Pet extends Component {
         super(props);
         console.log(props)
         this.state = {
-            updatedpet: false,
-            img: props.petInfo.img,
-            name: props.petInfo.name,
-            location: props.petInfo.state,
-            duration: props.petInfo.duration,
-            type: props.petInfo.type,
-            breed: props.petInfo.breed,
-            about: props.petInfo.about,
-            username: this.props.miliusername,
-            email: this.props.miliemail
+            // updatedpet: false,
+            // img: props.petInfo.img,
+            // name: props.petInfo.name,
+            // location: props.petInfo.state,
+            // duration: props.petInfo.duration,
+            // type: props.petInfo.type,
+            // breed: props.petInfo.breed,
+            // about: props.petInfo.about,
+            // username: this.props.miliusername,
+            // email: this.props.miliemail,
+            img: "",
+            name: "",
+            location: "",
+            duration: "",
+            type: "",
+            breed: "",
+            about: "",
         }
     }
 
@@ -38,8 +45,29 @@ class Pet extends Component {
     }
 
     submitPetUpdate = () => {
-        const { img, name, location, duration, type, breed, about } = this.state
-        Axios.put("api/petupdate", {
+        let { img, name, location, duration, type, breed, about } = this.state
+        if(img === "") {
+            img = this.props.petInfo.img;
+        }
+        if(name === "") {
+            name = this.props.petInfo.name;
+        }
+        if(location === "") {
+            location = this.props.petInfo.state;
+        }
+        if(duration === "") {
+            duration = this.props.petInfo.duration;
+        }
+        if(type === "") {
+            type = this.props.petInfo.type;
+        }
+        if(breed === "") {
+            breed = this.props.petInfo.breed;
+        }
+        if(about === "") {
+            about = this.props.petInfo.about;
+        }
+        Axios.put("/api/petupdate", {
             img,
             name,
             location,
@@ -73,50 +101,50 @@ class Pet extends Component {
                                 {
                                     this.state.updatedpet === true ?
 
-                                        <section>
-                                            <input className="puimg"
+                                        <section className="EI">
+                                            <input className="pin"
                                                 name="img"
                                                 placeholder="IMG URL"
                                                 onChange={this.handleChangePetUpdate}
-                                                defaultValue={this.state.img}
+                                                defaultValue={this.props.petInfo.img}
                                             ></input>
-                                            <input className="puname"
+                                            <input className="pin"
                                                 name="name"
                                                 placeholder="PETS NAME"
                                                 onChange={this.handleChangePetUpdate}
-                                                defaultValue={this.state.name}
+                                                defaultValue={this.props.petInfo.name}
                                             ></input>
-                                            <input className="pulocation"
+                                            <input className="pin"
                                                 name="location"
                                                 placeholder="LOCATION"
                                                 onChange={this.handleChangePetUpdate}
-                                                defaultValue={this.state.location}
+                                                defaultValue={this.props.petInfo.state}
                                             ></input>
-                                            <input className="puduration"
+                                            <input className="pin"
                                                 name="duration"
                                                 placeholder="DURATION"
                                                 onChange={this.handleChangePetUpdate}
-                                                defaultValue={this.state.duration}
+                                                defaultValue={this.props.petInfo.duration}
                                             ></input>
-                                            <input className="putype"
+                                            <input className="pin"
                                                 name="type"
                                                 placeholder="TYPE OF PET"
                                                 onChange={this.handleChangePetUpdate}
-                                                defaultValue={this.state.type}
+                                                defaultValue={this.props.petInfo.type}
                                             ></input>
-                                            <input className="pubreed"
+                                            <input className="pin"
                                                 name="breed"
                                                 placeholder="BREED"
                                                 onChange={this.handleChangePetUpdate}
-                                                defaultValue={this.state.breed}
+                                                defaultValue={this.props.petInfo.breed}
                                             ></input>
-                                            <textarea className="puabout"
+                                            <textarea className="pinabout"
                                                 name="about"
                                                 placeholder="ABOUT THE PET"
                                                 onChange={this.handleChangePetUpdate}
-                                                defaultValue={this.state.about}
+                                                defaultValue={this.props.petInfo.about}
                                             ></textarea>
-                                            <button className="SBBU"
+                                            <button className="PB"
                                                 onClick={this.submitPetUpdate}>SUBMIT</button>
                                         </section>
                                         : null
@@ -142,7 +170,7 @@ class Pet extends Component {
                                 }
                             </div>
                             {
-                                this.props.loggedin ?
+                                this.props.loggedin == this.props.userId ?
 
                                     <div className="petbuts">
                                         <button className="PB"
