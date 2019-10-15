@@ -73,7 +73,7 @@ class VolProfile extends Component {
                             className="volopic"
                             alt="urpic"
                             src={this.state.proimg}
-                        // {this.something.somethin}
+
                         />
                         {
                             this.props.loggedin ?
